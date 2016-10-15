@@ -1,9 +1,10 @@
-<form>
+<form (ngSubmit)="addTask()">
     <div class="form-group">
-        <input id="txt-addItem" autofocus type="text" />
+        <input type="text" id="taskName" placeholder="Task Name" autofocus 
+            [(ngModel)]="taskName" name="taskName" />
     </div>
     <div class="form-group btn-group">
-        <button class="btn btn-success" type="submit" (click)="addTask()">Submit</button>
+        <button class="btn btn-success" type="submit" >Submit</button>
         <button class="btn btn-warning" type="button">Clear</button>
     </div>
 </form>

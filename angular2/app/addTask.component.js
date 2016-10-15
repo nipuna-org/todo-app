@@ -24,8 +24,11 @@ var AddTaskComponent = (function () {
         this.tasks = this.taskService.getTasksList();
     };
     AddTaskComponent.prototype.addTask = function () {
-        var newTask = new Task_1.Task('taskNew');
-        this.tasks.push(newTask);
+        if (this.taskName !== '') {
+            var newTask = new Task_1.Task(this.taskName);
+            this.tasks.push(newTask);
+            this.taskName = "";
+        }
     };
     AddTaskComponent = __decorate([
         core_1.Component({

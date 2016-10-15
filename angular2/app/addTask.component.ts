@@ -12,8 +12,9 @@ import { TaskService} from './app.service';
 export class AddTaskComponent {
     tasks: Task[];
     submitted = false;
+    taskName: "";
 
-    onsubmit(){ this.submitted = true;}
+    onsubmit() { this.submitted = true; }
 
     constructor(private taskService: TaskService) {
     }
@@ -27,7 +28,10 @@ export class AddTaskComponent {
     }
 
     addTask(): void {
-        let newTask = new Task('taskNew');
-        this.tasks.push(newTask);
+        if (this.taskName !== '') {
+            let newTask = new Task(this.taskName);
+            this.tasks.push(newTask);
+            this.taskName = "";
+        }
     }
 }
