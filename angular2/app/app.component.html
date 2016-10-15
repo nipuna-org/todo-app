@@ -3,7 +3,7 @@
         <h1>{{title}}</h1>
     </div>
     <div class="col-md-6" style="margin-top: 22px;">
-        <button class="btn btn-primary pull-right" type="button"  *ngIf="!loggedIn" (click)="login()">Login</button>
+        <button class="btn btn-primary pull-right" type="button" *ngIf="!loggedIn" (click)="login()">Login</button>
         <button class="btn btn-secondary pull-right" type="button" *ngIf="loggedIn" (click)="logout()">Logout</button>
     </div>
 </div>
@@ -18,16 +18,13 @@
         <add-task></add-task>
     </div>
 </div>
-<div  *ngIf="loggedIn" class="panel panel-default">
+<div *ngIf="loggedIn" class="panel panel-default">
     <div class="panel-heading">Tasks List</div>
     <div class="panel-body">
-        <span class="list-group" *ngFor="let task of tasks">
+        <div class="list-group" *ngFor="let task of tasks">
             <div class="list-group-item">
                 <span>{{ task.Name}}</span>
-        <input [ngModel]="task.Deleted" type="checkbox" (change)="checkbox(task.Deleted)">
-
-        <span>{{ task.Deleted }}</span>
+            </div>
+        </div>
     </div>
-    </span>
-</div>
 </div>
