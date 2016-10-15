@@ -2,6 +2,7 @@
 var Task = (function () {
     function Task(name) {
         this.Name = name;
+        this.Deleted = false;
     }
     return Task;
 }());

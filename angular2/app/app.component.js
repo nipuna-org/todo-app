@@ -10,13 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var app_service_1 = require('./app.service');
+var globals = require('./globals');
 var AppComponent = (function () {
     function AppComponent(taskService) {
         this.taskService = taskService;
         this.title = 'Todo V1.0';
+        this.loggedIn = globals.loggedIn;
     }
     AppComponent.prototype.ngOnInit = function () {
         this.getTasks();
+    };
+    AppComponent.prototype.login = function () {
+        this.loggedIn = true;
+    };
+    AppComponent.prototype.logout = function () {
+        this.loggedIn = false;
     };
     AppComponent.prototype.getTasks = function () {
         this.tasks = this.taskService.getTasksList();

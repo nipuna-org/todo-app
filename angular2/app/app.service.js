@@ -10,11 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 exports.tasks = [
-    { Name: 'Task 1' },
-    { Name: 'Task 2' },
-    { Name: 'Task 3' },
-    { Name: 'Task 5' }
+    { Name: 'Task 1', Deleted: false },
+    { Name: 'Task 2', Deleted: true },
+    { Name: 'Task 3', Deleted: false },
+    { Name: 'Task 5', Deleted: false },
 ];
+exports.loggedIn = false;
 var TaskService = (function () {
     function TaskService() {
     }

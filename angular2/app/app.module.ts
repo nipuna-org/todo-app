@@ -6,6 +6,7 @@ import { TaskService} from './app.service';
 import { AppComponent} from './app.component';
 import { AddTaskComponent} from './addTask.component';
 
+
 @NgModule({
     imports: [BrowserModule, FormsModule],
     declarations: [AppComponent, AddTaskComponent],
