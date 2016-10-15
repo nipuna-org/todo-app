@@ -1,24 +1,16 @@
 import { Injectable } from '@angular/core';
+import { Task } from './models/task';
 
+export const tasks: Task[] = [
+    { Name: 'Task 1' },
+    { Name: 'Task 2' },
+    { Name: 'Task 3' },
+    { Name: 'Task 5' }
+];
 @Injectable()
 export class TaskService {
-        tasks: Task[];
-
-
 
     getTasksList(): Task[] {
-        return [
-            { Name: 'Task 1' },
-            { Name: 'Task 2' },
-            { Name: 'Task 3' }
-        ];
-    }
-}
-
-export class Task {
-    public Name: string;
-
-    constructor(name: string) {
-        this.Name = name;
+        return tasks;
     }
 }

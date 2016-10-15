@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var Task_1 = require('./models/Task');
 var app_service_1 = require('./app.service');
-var app_service_2 = require('./app.service');
 var AddTaskComponent = (function () {
     function AddTaskComponent(taskService) {
         this.taskService = taskService;
@@ -24,7 +24,7 @@ var AddTaskComponent = (function () {
         this.tasks = this.taskService.getTasksList();
     };
     AddTaskComponent.prototype.addTask = function () {
-        var newTask = new app_service_1.Task('taskNew');
+        var newTask = new Task_1.Task('taskNew');
         this.tasks.push(newTask);
     };
     AddTaskComponent = __decorate([
@@ -32,9 +32,9 @@ var AddTaskComponent = (function () {
             selector: 'add-task',
             templateUrl: 'app/views/addTask.component.html',
             styleUrls: ['app/styles.css'],
-            providers: [app_service_2.TaskService]
+            providers: [app_service_1.TaskService]
         }), 
-        __metadata('design:paramtypes', [app_service_2.TaskService])
+        __metadata('design:paramtypes', [app_service_1.TaskService])
     ], AddTaskComponent);
     return AddTaskComponent;
 }());

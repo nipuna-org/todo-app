@@ -9,15 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+exports.tasks = [
+    { Name: 'Task 1' },
+    { Name: 'Task 2' },
+    { Name: 'Task 3' },
+    { Name: 'Task 5' }
+];
 var TaskService = (function () {
     function TaskService() {
     }
     TaskService.prototype.getTasksList = function () {
-        return [
-            { Name: 'Task 1' },
-            { Name: 'Task 2' },
-            { Name: 'Task 3' }
-        ];
+        return exports.tasks;
     };
     TaskService = __decorate([
         core_1.Injectable(), 
@@ -26,11 +28,4 @@ var TaskService = (function () {
     return TaskService;
 }());
 exports.TaskService = TaskService;
-var Task = (function () {
-    function Task(name) {
-        this.Name = name;
-    }
-    return Task;
-}());
-exports.Task = Task;
 //# sourceMappingURL=app.service.js.map
