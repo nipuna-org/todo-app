@@ -1,0 +1,42 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var app_service_1 = require('./app.service');
+var app_service_2 = require('./app.service');
+var AddTaskComponent = (function () {
+    function AddTaskComponent(taskService) {
+        this.taskService = taskService;
+        this.submitted = false;
+    }
+    AddTaskComponent.prototype.onsubmit = function () { this.submitted = true; };
+    AddTaskComponent.prototype.ngOnInit = function () {
+        this.getTasks();
+    };
+    AddTaskComponent.prototype.getTasks = function () {
+        this.tasks = this.taskService.getTasksList();
+    };
+    AddTaskComponent.prototype.addTask = function () {
+        var newTask = new app_service_1.Task('taskNew');
+        this.tasks.push(newTask);
+    };
+    AddTaskComponent = __decorate([
+        core_1.Component({
+            selector: 'add-task',
+            templateUrl: 'app/views/addTask.component.html',
+            styleUrls: ['app/styles.css'],
+            providers: [app_service_2.TaskService]
+        }), 
+        __metadata('design:paramtypes', [app_service_2.TaskService])
+    ], AddTaskComponent);
+    return AddTaskComponent;
+}());
+exports.AddTaskComponent = AddTaskComponent;
+//# sourceMappingURL=addTask.component.js.map
