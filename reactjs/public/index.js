@@ -1,13 +1,41 @@
+var AppHeader = React.createClass({
+  render: function() {
+    return (
+      <div>App Header</div>
+    );
+  }
+});
+
 var AddTask = React.createClass({
   render: function() {
     return (
-      <div>This is Add Task Div</div>
+      <div>This is Add Task</div>
+    );
+  }
+});
+
+var TaskList = React.createClass({
+  render: function() {
+    return (
+      <div>This is Task List</div>
+    );
+  }
+});
+
+var TaskComponent = React.createClass({
+  render: function() {
+    return (
+      <div>
+      <AppHeader />
+      <AddTask />
+      <TaskList />
+      </div>
     );
   }
 });
 
 
 ReactDOM.render(
-  <AddTask url="/api/tasks" />,
-  document.getElementById('content')
+  <TaskComponent url="/api/tasks" />,
+  document.getElementById('app')
 );
